@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import EditTodo from "./EditTodo";
 
 function ListTodo() {
     const [todos, setTodos] = useState([]);
@@ -43,7 +44,7 @@ function ListTodo() {
                         <Card.Text>
                             {todo.description}
                         </Card.Text>
-                        <Button variant="success">Edit</Button>
+                        <EditTodo todo={todo}/>
                         <Button 
                             variant="danger" 
                             onClick={()=> deleteTodo(todo.todo_id)}
